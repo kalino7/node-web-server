@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{title}}</title>
+</head>
+<body>
+    {{!-- include header page --}}
+    {{>header}}
+
+   <b> Welcome To {{title}} page section </b>
+
+   {{!-- demonstration using the registerHelper upper_case fxn  --}}
+   <p>{{upper_case 'the fxn name and a space to signify it as an argument'}}</p>
+   
+   <p>
+       Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis sed commodi sit sunt! Harum incidunt magni fugiat facilis, sed aliquam a. Maiores a aliquid iste inventore quam blanditiis sed odit.
+   </p>
+   
+    {{!-- include footer page --}}
+    {{>footer}}
+</body>
+</html>
