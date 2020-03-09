@@ -5,6 +5,19 @@ const hbs = require('hbs');
 
 const app = express();
 
+//working with heroku, to deploy apps
+//the port would definitely varry
+//so we set it equall to the env.PORT or 3000 is the former isn't available
+//in this case it could still run on both local machine and the heroku platform
+//localhost would have the 3000, while when deployed the env.PORT comes alive
+//also rememeber to edit the package.json file add a script below the test but
+//inside the scripts {}
+
+//for the package.json file, since it doesn't allow comments
+// the start is a command that runs our node server.js when deployed on heroku
+//we could now start our app from terminal using=> npm start
+const port = process.env.PORT || 3000;
+
 //adding partials
 hbs.registerPartials(__dirname + '/views/partials');
 
@@ -89,8 +102,8 @@ app.get('/home', (req, res)=>{
 //   app.listen(3000);
 
   //.listen can actually take a second argument
-  let ports = 3000;
-app.listen(ports, ()=>{
-    console.log(`localhost:${ports} server is Live` );
+//   let ports = 3000;
+app.listen(port, ()=>{
+    console.log(`localhost:${port} server is Live` );
 })
   
