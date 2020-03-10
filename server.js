@@ -33,9 +33,11 @@ app.set('view engine', 'hbs');
 //    next();
 // });
 
-app.use((req,res,next)=>{
-    res.render('maintenance.hbs');
-});
+//this displays all the maintenance page irrespective of the page requested for
+//especially used during backup or site maintenance to prevent other pages from showing up
+// app.use((req,res,next)=>{
+//     res.render('maintenance.hbs');
+// });
 
 //the app.use function is a middleware function
 //this allows use to serve up a webpage
@@ -95,6 +97,12 @@ app.get('/home', (req, res)=>{
         title: 'Home',
         // year: new Date().getFullYear()
         //year no longer needed cause of the register fxn
+    });
+});
+
+app.get('/projects', (req, res)=>{
+    res.render('project.hbs', {
+        title: 'Projects', 
     });
 });
 
